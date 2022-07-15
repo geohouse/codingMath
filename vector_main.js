@@ -65,6 +65,21 @@ class Vector {
     this.#x += v2.x;
     this.#y += v2.y;
   }
+
+  subtractFrom(v2) {
+    this.#x -= v2.x;
+    this.#y -= v2.y;
+  }
+
+  multiplyBy(v2) {
+    this.#x *= v2.x;
+    this.#y *= v2.y;
+  }
+
+  divideBy(v2) {
+    this.#x /= v2.x;
+    this.#y /= v2.y;
+  }
 }
 
 //import { Vector } from "./vector.js";
