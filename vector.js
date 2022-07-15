@@ -39,13 +39,26 @@ export class Vector {
     this.#y = Math.sin(angle) * length;
   }
 
-  //getLength() {
-  //  return Math.sqrt(this.#x * this.#x + this.#y * this.#y);
-  //}
+  getLength() {
+    return Math.sqrt(this.#x * this.#x + this.#y * this.#y);
+  }
   test() {
     return "test";
   }
   add(v2) {
-    return "test"; //new Vector(this.#x + v2.x, this.#y + v2.y);
+    return new Vector(this.#x + v2.x, this.#y + v2.y);
   }
+
+  subtract(v2){
+    return new Vector(this.#x - v2.x, this.#y - v2.y);
+  }
+
+  multiply(v2){
+    return new Vector(this.#x * v2.x, this.#y * v2.y);
+  }
+
+  divide(v2){
+    return new Vector(this.#x / v2.x, this.#y / v2.y);
+  }
+
 }
