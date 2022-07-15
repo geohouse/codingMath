@@ -8,8 +8,8 @@ console.log(v1.y);
 console.log(v1.getAngle());
 console.log(v1.getLength());
 
-v1.setAngle(Math.PI / 6);
-v1.setLength(100);
+//v1.setAngle(Math.PI / 6);
+//v1.setLength(100);
 
 console.log(v1.x);
 console.log(v1.y);
@@ -20,3 +20,9 @@ let v3 = v1.add(v2);
 console.log(v3);
 
 console.log("Gussy!!");
+
+console.log(v1.getLength());
+
+let v4 = v1.multiply(2);
+
+console.log(v4);
