@@ -49,16 +49,20 @@ export class Vector {
     return new Vector(this.#x + v2.x, this.#y + v2.y);
   }
 
-  subtract(v2){
+  subtract(v2) {
     return new Vector(this.#x - v2.x, this.#y - v2.y);
   }
 
-  multiply(v2){
+  multiply(v2) {
     return new Vector(this.#x * v2.x, this.#y * v2.y);
   }
 
-  divide(v2){
+  divide(v2) {
     return new Vector(this.#x / v2.x, this.#y / v2.y);
   }
 
+  addTo(v2) {
+    this.#x += v2.x;
+    this.#y += v2.y;
+  }
 }

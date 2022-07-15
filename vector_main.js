@@ -60,6 +60,11 @@ class Vector {
   divide(v2) {
     return new Vector(this.#x / v2.x, this.#y / v2.y);
   }
+
+  addTo(v2) {
+    this.#x += v2.x;
+    this.#y += v2.y;
+  }
 }
 
 //import { Vector } from "./vector.js";
@@ -93,3 +98,7 @@ let v5 = v1.subtract(v2);
 
 console.log(v4);
 console.log(v5);
+
+let v6 = v1.addTo(v2);
+console.log(v1);
+console.log(v6);
