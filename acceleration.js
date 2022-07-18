@@ -1,7 +1,7 @@
 import { Vector, Particle } from "./physicsClasses.js";
 
 // toggle whether using a single point or 'fireworks'
-let singleToggle = true;
+let singleToggle = false;
 let p;
 window.onload = function () {
   let canvas = document.getElementById("canvas"),
@@ -26,7 +26,7 @@ window.onload = function () {
   }
 
   // This script imports the Particle class
-  let accel = new Vector(0.1, 0.1);
+  let accel = new Vector(0.07, 0.05);
   //let position = new Vector(500, 500);
   //let velocity = new Vector(0, 0);
 
