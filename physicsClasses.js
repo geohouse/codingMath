@@ -91,11 +91,34 @@ export class Particle {
     this.velocity = new Vector(0, 0);
     this.velocity.setLength(speed);
     this.velocity.setAngle(direction);
+    this.mass = 1;
   }
   accelerate(accel) {
     this.velocity.addTo(accel);
   }
   update() {
     this.position.addTo(this.velocity);
+  }
+
+  angleTo(p2) {
+    return Math.atan2(
+      p2.position.y - this.position.y,
+      p2.position.x - this.position.x
+    );
+  }
+
+  distanceTo(p2) {
+    let dx = p2.position.x - this.position.x;
+    let dy = p2.position.y - this.position.y;
+
+    return Math.sqrt(dx * dx + dy * dy);
+  }
+
+  gravitateTo(p2) {
+    let grav = new Vector(0, 0);
+    let dist = this.distanceTo(p2);
+    grav.setLength(p2.mass / (dist * dist));
+    grav.setAngle(this.angleTo(p2));
+    this.velocity.addTo(grav);
   }
 }
