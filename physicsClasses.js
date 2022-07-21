@@ -94,6 +94,7 @@ export class Particle {
     this.mass = 1;
     this.radius = 0;
     this.gravity = new Vector(0, grav || 0);
+    this.bounce = -1;
   }
   accelerate(accel) {
     this.velocity.addTo(accel);
