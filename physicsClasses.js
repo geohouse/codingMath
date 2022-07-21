@@ -99,8 +99,8 @@ export class Particle {
     this.velocity.addTo(accel);
   }
   update() {
+    this.velocity.addTo(this.gravity);
     this.position.addTo(this.velocity);
-    this.position.addTo(this.gravity);
   }
 
   angleTo(p2) {
