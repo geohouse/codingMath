@@ -86,18 +86,21 @@ export class Vector {
 //import { Vector } from "./vector.js";
 
 export class Particle {
-  constructor(x, y, speed, direction) {
+  constructor(x, y, speed, direction, grav) {
     this.position = new Vector(x, y);
     this.velocity = new Vector(0, 0);
     this.velocity.setLength(speed);
     this.velocity.setAngle(direction);
     this.mass = 1;
+    this.radius = 0;
+    this.gravity = new Vector(0, grav || 0);
   }
   accelerate(accel) {
     this.velocity.addTo(accel);
   }
   update() {
     this.position.addTo(this.velocity);
+    this.position.addTo(this.gravity);
   }
 
   angleTo(p2) {
